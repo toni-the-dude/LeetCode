@@ -5,8 +5,6 @@ class Solution:
         i = 0
         while i < len(s):
             char = s[i]
-            # print("Index:{0}".format(i))
-            # print(number)
             if char == "I" and (i + 1) != len(s):
                 if s[i + 1] == "V":
                     number += 4
