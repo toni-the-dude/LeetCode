@@ -25,24 +25,28 @@ class Solution:
         fr3 = [[],[]] # Stores mismatched keys
         for k, v in fr1.items():
             if k in fr2.keys():
+                
                 if v == fr2[k]:
                     fr2.pop(k, None)
                 else: # Failed to qualify for operation 1, might qualify for operation 2
                     fr3[0].append(k)
                     fr3[1].append(k)
             else:
-                return False
-        print(fr3)
+                return False # A character is utterly missing from word2
+            
         pair = False
+        
         while len(fr3[0]) != 0:
             pair = False
             for j in range(0, len(fr3[1]), 1):
                 if fr1[fr3[0][0]] == fr2[fr3[1][j]]:
+                    
                     fr3[0].pop(0)
                     fr3[1].pop(j)
                     print(fr3)
                     pair = True
                     break
+                    
             if pair == False:
                 return False
         
