@@ -11,7 +11,6 @@ class RecentCounter:
             while self.requests[-i] >= (t - 3000) and self.requests[-i] <= t:
                 counter += 1
                 i += 1
-                # print(counter)
         finally:
             return counter
 
