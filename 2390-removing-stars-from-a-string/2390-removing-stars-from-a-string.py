@@ -1,6 +1,6 @@
 class Solution:
     def removeStars(self, s: str) -> str:
-        
+        # Should have used a stack
         try:
             i = 0
             while True:
