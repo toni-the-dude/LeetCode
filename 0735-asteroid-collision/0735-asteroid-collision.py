@@ -6,6 +6,7 @@ class Solution:
             while stack != [] and a < 0 < stack[-1]: # We are only concerned about incoming negatives if we have positives in the stack
                 if abs(a) > stack[-1]:
                     stack.pop()
+                    continue
                 elif abs(a) == stack[-1]:
                     stack.pop()
                     break
