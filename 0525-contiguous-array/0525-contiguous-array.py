@@ -1,17 +1,18 @@
-class Solution(object):
-    def findMaxLength(self, nums):
-        count = 0
-        max_length=0
-        table = {0: 0}
-        for index, num in enumerate(nums, 1):
-            if num == 0:
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        
+        count_keys = {0: 0}
+        max_chain = count = 0
+        
+        for i in range(0, len(nums), 1):
+            if nums[i] == 0:
                 count -= 1
             else:
                 count += 1
-            
-            if count in table:
-                max_length = max(max_length, index - table[count])
+                
+            if count in count_keys:
+                max_chain = max(max_chain, i + 1 - count_keys[count])
             else:
-                table[count] = index
-        
-        return max_length
+                count_keys[count] = i + 1
+                
+        return max_chain
