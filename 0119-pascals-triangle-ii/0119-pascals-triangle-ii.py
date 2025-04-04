@@ -10,14 +10,12 @@ class Solution:
         while True:
 
             for index in range(0, len(list_for_previous_row) - 1, 1):
-                print(list_for_current_row)
                 penult = len(list_for_current_row) - 1
                 list_for_current_row.insert(penult, list_for_previous_row[index] + list_for_previous_row[index + 1])
 
             if current_row_index == rowIndex:
                 return list_for_current_row
 
-            list_for_previous_row = list_for_current_row
-            print("List for previous row updated to: {0}".format(list_for_previous_row))
+            list_for_previous_row = list_for_current_row # Track the previous row
             current_row_index += 1
-            list_for_current_row = [1, 1]
+            list_for_current_row = [1, 1] # Reset list for the current row
